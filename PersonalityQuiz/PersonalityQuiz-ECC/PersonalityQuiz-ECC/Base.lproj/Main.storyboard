@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Inttoduction View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PersonalityQuiz_ECC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InttoductionViewController" customModule="PersonalityQuiz_ECC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="-459" y="134"/>
         </scene>
-        <!--View Controller-->
+        <!--Question View Controller-->
         <scene sceneID="UAG-pX-vzg">
             <objects>
-                <viewController id="Aij-gg-qfz" sceneMemberID="viewController">
+                <viewController id="Aij-gg-qfz" customClass="QuestionViewController" customModule="PersonalityQuiz_ECC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sl7-6Y-Y8b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,18 +96,31 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FA-7K-vub">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="sButton1:" destination="Aij-gg-qfz" eventType="touchUpInside" id="PV6-BU-wkU"/>
+                                            <action selector="singleButton1:" destination="Aij-gg-qfz" eventType="touchUpInside" id="tcM-fA-lIM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSK-OO-X5c">
                                         <rect key="frame" x="0.0" y="50" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButton2:" destination="Aij-gg-qfz" eventType="touchUpInside" id="GXX-Fu-Sat"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soL-Xu-JNj">
                                         <rect key="frame" x="0.0" y="100" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButton3:" destination="Aij-gg-qfz" eventType="touchUpInside" id="UOz-Sx-RvK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2E-Ow-0OC">
                                         <rect key="frame" x="0.0" y="150" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleButton4:" destination="Aij-gg-qfz" eventType="touchUpInside" id="UOf-bC-7wV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -239,13 +252,33 @@
                         <viewLayoutGuide key="safeArea" id="TpE-kK-9X1"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="Pju-uh-d3M"/>
                                 <exclude reference="9r1-QJ-2fJ"/>
+                                <exclude reference="RGY-j0-0aB"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="6W9-tM-Num"/>
                     <connections>
+                        <outlet property="multiLabel1" destination="EcK-A7-pI8" id="y19-xs-6xE"/>
+                        <outlet property="multiLabel2" destination="t4i-pE-zOi" id="056-RY-0ET"/>
+                        <outlet property="multiLabel3" destination="4KD-KI-TWE" id="N4M-fQ-vXE"/>
+                        <outlet property="multiLabel4" destination="CWt-Ix-QAv" id="47J-1a-DtQ"/>
+                        <outlet property="multiSwitch1" destination="HgL-J6-kXh" id="L4C-9K-mOH"/>
+                        <outlet property="multiSwitch2" destination="TSB-jm-bkG" id="08a-M1-DX7"/>
+                        <outlet property="multiSwitch3" destination="d6q-0x-fnK" id="Onj-as-voA"/>
+                        <outlet property="multiSwitch4" destination="1NI-Ty-jaw" id="FeI-FE-KGa"/>
+                        <outlet property="multipleStackView" destination="9r1-QJ-2fJ" id="00U-9w-knf"/>
+                        <outlet property="progressView" destination="ZKM-mV-7Hh" id="mrG-Lg-KCd"/>
+                        <outlet property="questionLabel" destination="k1R-dT-ini" id="ang-ry-Plu"/>
+                        <outlet property="rangedLabel1" destination="VDm-27-bCX" id="ryp-nC-U6m"/>
+                        <outlet property="rangedLabel2" destination="MTq-Gv-51s" id="xyg-Re-nOP"/>
+                        <outlet property="rangedSlider" destination="xpS-1j-gUP" id="T3j-Wn-rDa"/>
+                        <outlet property="rangedStackView" destination="RGY-j0-0aB" id="VQt-kD-cHu"/>
+                        <outlet property="singleButton1" destination="5FA-7K-vub" id="f3Q-S1-cmE"/>
+                        <outlet property="singleButton2" destination="iSK-OO-X5c" id="6le-Un-MYv"/>
+                        <outlet property="singleButton3" destination="soL-Xu-JNj" id="gA4-yy-PU8"/>
+                        <outlet property="singleButton4" destination="t2E-Ow-0OC" id="MSD-t5-6pm"/>
+                        <outlet property="singleStackView" destination="Pju-uh-d3M" id="9ft-G9-550"/>
                         <segue destination="MxC-hy-T5y" kind="show" identifier="ResultsSague" id="5Xy-tp-N0e"/>
                     </connections>
                 </viewController>
@@ -256,7 +289,7 @@
         <!--Results-->
         <scene sceneID="hAx-UL-Imh">
             <objects>
-                <viewController id="MxC-hy-T5y" sceneMemberID="viewController">
+                <viewController id="MxC-hy-T5y" customClass="ResultsViewController" customModule="PersonalityQuiz_ECC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G4z-86-Pie">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
